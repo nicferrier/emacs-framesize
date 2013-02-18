@@ -4,7 +4,7 @@
 
 ;; Author: Nic Ferrier <nferrier@ferrier.me.uk>
 ;; Keywords: frames
-;; URL: http://github.com/nicferrier/framesize
+;; URL: http://github.com/nicferrier/emacs-framesize
 ;; Package-Requires: ((keychord "0.5.20080915"))
 ;; Version: 0.0.1
 ;; Created: 18th February 2013
