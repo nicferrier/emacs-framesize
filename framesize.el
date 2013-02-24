@@ -46,6 +46,7 @@
         (set-face-attribute 'default (selected-frame) :height ceil)
       (error (message "can't change frame font size")))))
 
+;;;###autoload
 (defun frame-font-keychord-init ()
   (key-chord-mode t)
   (key-chord-define-global "fv" 'frame-font-bigger)
