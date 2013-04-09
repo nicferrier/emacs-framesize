@@ -28,10 +28,19 @@
 
 ;;; Code:
 
+(defgroup frame-font nil
+  "Frame font let's you quickly scale the font of a frame."
+  :group 'faces)
+
+(defcustom frame-font-increment 25
+  "The amount to scale or reduce the font size by."
+  :type 'integer
+  :group 'frame-font)
+
 ;;;###autoload
 (defun frame-font-bigger ()
   (interactive)
-  (let* ((inc 50)
+  (let* ((inc frame-font-increment)
          (sz (face-attribute 'default :height (selected-frame)))
          (ceil (+ (* inc (ceiling sz inc)) inc)))
     (set-face-attribute 'default (selected-frame) :height ceil)))
@@ -39,7 +48,7 @@
 ;;;###autoload
 (defun frame-font-smaller ()
   (interactive)
-  (let* ((inc 50)
+  (let* ((inc frame-font-increment)
          (sz (face-attribute 'default :height (selected-frame)))
          (ceil (- (* inc (ceiling sz inc)) (* 2 inc))))
     (condition-case err
