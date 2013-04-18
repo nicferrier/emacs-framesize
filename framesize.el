@@ -6,7 +6,7 @@
 ;; Keywords: frames
 ;; URL: http://github.com/nicferrier/emacs-framesize
 ;; Package-Requires: ((key-chord "0.5.20080915"))
-;; Version: 0.0.3
+;; Version: 0.0.4
 ;; Created: 18th February 2013
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -36,6 +36,11 @@
   "The amount to scale or reduce the font size by."
   :type 'integer
   :group 'frame-font)
+
+;;;; TODO
+
+;; add custom to turn on scaling split-width-threshold by font-size
+
 
 ;;;###autoload
 (defun frame-font-bigger ()
