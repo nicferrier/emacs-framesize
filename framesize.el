@@ -41,14 +41,15 @@
 
 ;; add custom to turn on scaling split-width-threshold by font-size
 
-
 ;;;###autoload
 (defun frame-font-bigger ()
   (interactive)
   (let* ((inc frame-font-increment)
          (sz (face-attribute 'default :height (selected-frame)))
          (ceil (+ (* inc (ceiling sz inc)) inc)))
-    (set-face-attribute 'default (selected-frame) :height ceil)))
+    (progn
+      (set-face-attribute 'default (selected-frame) :height ceil)
+      (setq split-width-threshold sz))))
 
 ;;;###autoload
 (defun frame-font-smaller ()
@@ -57,7 +58,10 @@
          (sz (face-attribute 'default :height (selected-frame)))
          (ceil (- (* inc (ceiling sz inc)) (* 2 inc))))
     (condition-case err
-        (set-face-attribute 'default (selected-frame) :height ceil)
+        (progn
+          (set-face-attribute 'default (selected-frame) :height ceil)
+          ;; adjust the split width threshold auotmatically
+          (setq split-width-threshold sz))
       (error (message "can't change frame font size")))))
 
 ;;;###autoload
