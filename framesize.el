@@ -6,7 +6,7 @@
 ;; Keywords: frames
 ;; URL: http://github.com/nicferrier/emacs-framesize
 ;; Package-Requires: ((key-chord "0.5.20080915"))
-;; Version: 0.0.4
+;; Version: 0.0.5
 ;; Created: 18th February 2013
 
 ;; This program is free software; you can redistribute it and/or modify
